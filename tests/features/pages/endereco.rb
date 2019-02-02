@@ -1,26 +1,24 @@
-class Endereco <SitePrism::page
+class Endereco <SitePrism::Page
 
 
 
     #Elementos
 
-    element :cep, '#homeAddress.cep'
-    element :numero, '#homeAddress.number'
-    element :celular, '#mobilePhone'
+    element :cep, :xpath, '//*[@id="homeAddress.cep"]'
+    element :numero, :xpath,'//*[@id="homeAddress.number"]'
+    element :celular, :xpath, '//*[@id="mobilePhone"]'
     
-    element :continuarendereço, '#button-borrower-info'
+    element :continuarendereço, :xpath, '//*[@id="button-borrower-info"]'
 
 
 
     #Metodos
 
-    def informarendereco(endereco)
+    def informarendereco(endereço)
         cep.set endereco['CEP']
         numero.set endereco['Numero']
-        celular.set endereco['Celular']
     end
-
-
+    
     def btncontinuarendereco
         continuarendereço.click
     end

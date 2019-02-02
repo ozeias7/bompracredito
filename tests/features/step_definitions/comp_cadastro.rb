@@ -55,6 +55,3 @@ Entao("clico no botão continuarEndereço.") do
 endereço.btncontinuarendereco
 end
 
-Então("vejo a mensagem {string}.") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
-end

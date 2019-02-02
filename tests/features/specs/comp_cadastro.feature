@@ -20,8 +20,8 @@ E preenchos todos os dados do cadastro:
 | 73485321524 | 23021988  | 50000      |
 Entao clico em continuarcadastro.
 E preencho os dados do endereço:
-|CEP     |Numero|Celular   |
-|06420130|123   |98711-1236|
+|CEP     |Numero|Celular    |
+|06420130|123   |11987111236|
 Entao clico no botão continuarEndereço.
  
 
