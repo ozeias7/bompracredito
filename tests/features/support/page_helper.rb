@@ -10,8 +10,8 @@ module Pages
         @cadastro ||=CompCadastro.new
     end
 
-    def endereço
-        @endereço ||=Endereco.new
+    def endereco
+        @endereco ||=Endereco.new
     end
 
 end

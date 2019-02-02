@@ -48,10 +48,10 @@ Entao("clico em continuarcadastro.") do
 end
 
 Entao("preencho os dados do endereço:") do |table|
-endereço.informarendereco(table.hashes[0])
+  endereco.informarendereco(table.hashes[0])
 end
 
 Entao("clico no botão continuarEndereço.") do
-endereço.btncontinuarendereco
+  endereco.btncontinuarendereco
 end
 
