@@ -17,7 +17,7 @@ Dado que preenchemos os dados do pre-cadastro
 E clico em continuar.
 E preenchos todos os dados do cadastro:
 |     CPF     | Nascimento| RendaMensal| 
-| 73485321524 | 23021988  | 1000       |
+| 73485321524 | 23021988  | 50000      |
 E clico em continuarcadastro.
 
 

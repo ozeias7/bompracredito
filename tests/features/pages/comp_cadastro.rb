@@ -1,25 +1,29 @@
 class CompCadastro <SitePrism::Page
 
-   
-    def elementos_cadastros
+# Elementos
 
       element :cpf, '#borrower.cpf'
       element :dataNascimento, '#borrower.dateOfBirth'
       element :rendaMensal, '#borrower.monthlyGrossIncome'
-      element :masculino, '.ng-dirty radio-btn-active radio-btn ng-touched ng-valid'
-      element :estadoCivil, '#borrower.maritalStatus'
-      element :combo_ocupaçao, '#borrower.jobType'
-      element :combo_profissão, '#borrower.profession'
-      element :combo_escolaridade, '#borrower.educationLevel'
+      element :masculino, :xpath, '//label[contains(.,"Masculino")]'
+      element :estadoCivil, :xpath, '//label[contains(.,"Casado")]'
+      element :combo_ocupaçao, :xpath, '//select[@formcontrolname="jobType"]'
+      element :seleciona_assalariado, :xpath, '//*[@id="borrower.jobType"]/option[2]'
+      element :combo_profissão, :xpath, '//*[@id="borrower.profession"]'
+      element :seleciona_profissão, :xpath, '//*[@id="borrower.profession"]/option[89]'
+      element :combo_escolaridade, :xpath, '//*[@id="borrower.educationLevel"]'
+      element :seleciona_escolariedade, :xpath, '//*[@id="borrower.educationLevel"]/option[6]'
       element :contaBanco, '#borrower.bankingData.bankNumber'
+      element :selecionabanco, :xpath, '//*[@id="borrower.bankingData.bankNumber"]/option[2]'
       element :cheques, '#borrower.bankingData.hasCheckbook2'
       element :restriçãoNome, '#borrower.hasNegativeCreditRecord2'
       element :imovelProprio, '#hasProperty'
       element :automovelProprio, '#hasVehicle2'
       element :continuarcadastro, '#button-borrower-info'
       
+
        
-    end
+      element :cadastro, '.main-area'
 
     # Metodos
 
@@ -30,12 +34,12 @@ class CompCadastro <SitePrism::Page
          sleep(3)
      end
 
-      def infomarM(cadastro)
-          find(:class, "ng-dirty radio-btn-active radio-btn ng-touched ng-valid").click
-      end
-
+     def cliquetelacadastro
+         cadastro.click
+     end
+     
      def informarMasculino
-         masculino.click_on
+         masculino.click
      end
 
      def informarEstadoCivil
@@ -57,11 +61,39 @@ class CompCadastro <SitePrism::Page
      def informarAutomovelProprio
          automovelProprio.click
      end
+
+
+     def selecionaescolariedade
+         combo_escolaridade.click
+     end
+
+     def escolariedadeselecionada
+         seleciona_escolariedade.click
+     end
+     
+     def selecionaconta
+         contaBanco.click
+     end
+
+     def bancoselecionado
+         selecionabanco.click
+     end
+
+
       
      # Métodos Ocupações
 
-     def OcupaçãoAssalariado
-         combo_ocupaçao_.find ('option [ value = "0"]'). select_option
+
+     def selecionaocupaçao
+         combo_ocupaçao.click
+     end
+
+     def ocupaçaoselecionada
+         seleciona_assalariado.click
+     end
+
+     def ocupaçãoAssalariado(ocupaçao)
+         combo_ocupaçao.find('option', text: ocupaçao). select_option
          sleep(5)
      end
     
@@ -76,6 +108,15 @@ class CompCadastro <SitePrism::Page
      end
 
      # Médotos Profições
+
+     def selecionaprofissão
+         combo_profissão.click
+     end
+
+     def profissãoselecionada
+         seleciona_profissão.click
+     end
+
 
 
      def profissãoDesenhista
