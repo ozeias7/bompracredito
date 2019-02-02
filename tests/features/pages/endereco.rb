@@ -15,8 +15,9 @@ class Endereco <SitePrism::Page
     #Metodos
 
     def informarendereco(endereço)
-        cep.set endereco['CEP']
-        numero.set endereco['Numero']
+        cep.set endereço['CEP']
+        numero.set endereço['Numero']
+        celular.set endereço['Celular']
     end
     
     def btncontinuarendereco
