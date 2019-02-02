@@ -1,4 +1,4 @@
-Dado("que preenchemos os dados do pre-cadastro") do |table|                        
+Dado("que preenchemos os dados do pre-cadastro") do |table|
   precadastro.load
   precadastro.informarvalor
   precadastro.informarquandidade
@@ -6,9 +6,9 @@ Dado("que preenchemos os dados do pre-cadastro") do |table|
   precadastro.cliqueTela
 
   sleep(15)
-end                                                                                
-                                                                                   
-Dado("preenchos todos os dados do cadastro:") do |table|                           
+end
+
+Entao("preenchos todos os dados do cadastro:") do |table|
   cadastro.relizarCadastro(table.hashes[0])
   sleep(1)
   cadastro.cliquetelacadastro
@@ -41,13 +41,20 @@ Dado("preenchos todos os dados do cadastro:") do |table|
   cadastro.infomarRestriçãoNome
   cadastro.infomrarImovelProprio
   cadastro.informarAutomovelProprio
-  
+end
 
+Entao("clico em continuarcadastro.") do
+  cadastro.btnContinuar  
+end
 
-end                                                                                
-                                                                                   
-Dado("clico em continuarcadastro.") do   
-  cadastro.btnContinuar                                          
-end                                                                                
-                                                                                   
-                                                                                   
+Entao("preencho os dados do endereço:") do |table|
+endereço.informarendereco(table.hashes[0])
+end
+
+Entao("clico no botão continuarEndereço.") do
+endereço.btncontinuarendereco
+end
+
+Então("vejo a mensagem {string}.") do |string|
+  pending # Write code here that turns the phrase above into concrete actions
+end

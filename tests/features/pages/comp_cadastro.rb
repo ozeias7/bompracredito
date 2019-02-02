@@ -117,8 +117,6 @@ class CompCadastro <SitePrism::Page
          seleciona_profissão.click
      end
 
-
-
      def profissãoDesenhista
          combo_profissão.find ('option [ label = "Desenhista" ]').select_option
      end
@@ -135,7 +133,7 @@ class CompCadastro <SitePrism::Page
      
      
      def btnContinuar
-        continuarcadastro.click
+         continuarcadastro.click
      end
 
 
