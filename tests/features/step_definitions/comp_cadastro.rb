@@ -37,11 +37,17 @@ Dado("preenchos todos os dados do cadastro:") do |table|
   cadastro.selecionaconta
   sleep(1)
   cadastro.bancoselecionado
+  cadastro.informarCheques
+  cadastro.infomarRestriçãoNome
+  cadastro.infomrarImovelProprio
+  cadastro.informarAutomovelProprio
   
+
+
 end                                                                                
                                                                                    
-Dado("clico em continuarcadastro.") do                                             
-  pending # Write code here that turns the phrase above into concrete actions      
+Dado("clico em continuarcadastro.") do   
+  cadastro.btnContinuar                                          
 end                                                                                
                                                                                    
                                                                                    

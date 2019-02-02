@@ -13,13 +13,13 @@ class CompCadastro <SitePrism::Page
       element :seleciona_profissão, :xpath, '//*[@id="borrower.profession"]/option[89]'
       element :combo_escolaridade, :xpath, '//*[@id="borrower.educationLevel"]'
       element :seleciona_escolariedade, :xpath, '//*[@id="borrower.educationLevel"]/option[6]'
-      element :contaBanco, '#borrower.bankingData.bankNumber'
+      element :contaBanco, :xpath, '//*[@id="borrower.bankingData.bankNumber"]'
       element :selecionabanco, :xpath, '//*[@id="borrower.bankingData.bankNumber"]/option[2]'
-      element :cheques, '#borrower.bankingData.hasCheckbook2'
-      element :restriçãoNome, '#borrower.hasNegativeCreditRecord2'
-      element :imovelProprio, '#hasProperty'
-      element :automovelProprio, '#hasVehicle2'
-      element :continuarcadastro, '#button-borrower-info'
+      element :cheques, :xpath, '//*[@id="borrower.bankingData.hasCheckbook"]'
+      element :restriçãoNome, :xpath, '//*[@id="borrower.hasNegativeCreditRecord2"]'
+      element :imovelProprio, :xpath, '//*[@id="hasProperty"]'
+      element :automovelProprio, :xpath, '//*[@id="hasVehicle2"]'
+      element :continuarcadastro, :xpath, '//*[@id="button-borrower-info"]'
       
 
        
