@@ -17,7 +17,7 @@ class CompCadastro <SitePrism::Page
       element :combo_estudante, :xpath, '//select[@formcontrolname="jobType"]'
       element :seleciona_estudante, :xpath, '//*[@id="borrower.jobType"]/option[8]'
       
-
+      #############################
       element :combo_profissão_desenhista, :xpath, '//*[@id="borrower.profession"]'
       element :seleciona_profissão_desenhista, :xpath, '//*[@id="borrower.profession"]/option[89]'
 
@@ -25,7 +25,7 @@ class CompCadastro <SitePrism::Page
       element :seleciona_profissao_Pisciculto, :xpath, '//*[@id="borrower.profession"]/option[2]'
       
       element :combo_profissao_Arqueologo, :xpath, '//*[@id="borrower.profession"]'
-      element :selecionar_profissao_Arqueolofo, :xpath, '//*[@id="borrower.profession"]/option[25]'
+      element :selecionar_profissao_Arqueolofo, :xpath, '//*[@id="borrower.profession"]/option[2]'
       
 
       element :combo_escolaridade, :xpath, '//*[@id="borrower.educationLevel"]'
@@ -53,11 +53,19 @@ class CompCadastro <SitePrism::Page
      end
 
      def relizarCadastroempresario(cadastro)
-        find(:id, 'borrower.cpf').set cadastro['CPFEmpresario']
-        find(:id, 'borrower.dateOfBirth').set cadastro['NascimentoEmpresario']             
-        find(:id, 'borrower.monthlyGrossIncome').set cadastro['RendaMensalEmpresario']
-        sleep(3)
-    end
+         find(:id, 'borrower.cpf').set cadastro['CPFEmpresario']
+         find(:id, 'borrower.dateOfBirth').set cadastro['NascimentoEmpresario']             
+         find(:id, 'borrower.monthlyGrossIncome').set cadastro['RendaMensalEmpresario']
+         sleep(3)
+     end
+     
+     def relizarCadastroEstudante(cadastro)
+         find(:id, 'borrower.cpf').set cadastro['CPFEstudante']
+         find(:id, 'borrower.dateOfBirth').set cadastro['NascimentoEstudante']             
+         find(:id, 'borrower.monthlyGrossIncome').set cadastro['RendaMensalEstundante']
+         sleep(3)
+     end
+
 
 
      def cliquetelacadastro
@@ -141,21 +149,32 @@ class CompCadastro <SitePrism::Page
 
 
      # Métodos Piscicultor
-    def selecionaProfissaoPiscicultor
-        combo_profissao_Piscicultor.click
-    end
+     def selecionaProfissaoPiscicultor
+         combo_profissao_Piscicultor.click
+     end
 
-    def ocupaçãoselecionadaPiscicultor
-        seleciona_profissao_Pisciculto.click  
-    end
-
-
-    # Métodos Estudante
+     def ocupaçãoselecionadaPiscicultor
+         seleciona_profissao_Pisciculto.click  
+     end
 
 
-    # Métodos Arqueolo
+     # Métodos Estudante
+     def selecionaProfissaoEstudane
+         combo_estudante.click
+     end  
 
+     def ocupaçãoselecionadaEstudante
+         seleciona_estudante.click
+     end
 
+     # Métodos Arqueologo
+       def selecionaProfissaoArqueologo
+           combo_profissao_Arqueologo.click
+       end
+
+       def ocupaçãoselecionadaArqueologo
+           selecionar_profissao_Arqueolofo.click
+       end
 
      # Métodos 
      

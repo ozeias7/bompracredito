@@ -119,36 +119,69 @@ Entao("preenchos todos os dados do cadastro Empresário:") do |table|
 
  Entao("clico no botão continuarEndereço Empresário.") do
   endereco.btncontinuarendereco
+  sleep(5)
  end
 
 
  ################ Estudante
 
-Dado("que preenchemos os dados do pre-cadastro Estudante") do |table|
+ Dado("que preenchemos os dados do pre-cadastro Estudante") do |table|
   precadastro.load
   precadastro.informarvalor
   precadastro.informarquandidade
   precadastro.empresarioEstudante(table.hashes[0])
   precadastro.cliqueTela
-  sleep(2)
+  sleep(3)
 
 end
 
-Entao("clico em continuar Estudante") do
-  pending # Write code here that turns the phrase above into concrete actions
+ Entao("clico em continuar Estudante") do
+ precadastro.botaocontinuar
+ sleep(2)
 end
 
-Entao("preenchos todos os dados do cadastro Estudante:") do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
-end
+ Entao("preenchos todos os dados do cadastro Estudante:") do |table|
+ 
+  cadastro.relizarCadastroEstudante(table.hashes[0])
+  cadastro.cliquetelacadastro
+  cadastro.informarMasculino
+  cadastro.informarEstadoCivil
+  cadastro.cliquetelacadastro 
+  
+   # Ocupação Estudane
 
-Entao("preencho os dados do endereço Estudante:") do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
-end
+   cadastro.selecionaProfissaoEstudane
+   cadastro.ocupaçãoselecionadaEstudante
+   
 
-Entao("clico no botão continuarEndereço Estudante.") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
+   # Profissão Estudante
+
+   cadastro.selecionaProfissaoArqueologo
+   cadastro.ocupaçãoselecionadaArqueologo
+
+
+   # Escolariedade
+  cadastro.selecionaescolariedade
+  cadastro.escolariedadeselecionada
+
+  # Banco
+  cadastro.selecionaconta
+  cadastro.bancoselecionado
+  cadastro.informarCheques
+  cadastro.infomarRestriçãoNome
+  cadastro.infomrarImovelProprio
+  cadastro.informarAutomovelProprio
+
+  sleep(3)
+   
+ end
+
+ Entao("preencho os dados do endereço Estudante:") do |table|
+  endereco.informarendereco(table.hashes[0])
+ end
+
+ Entao("clico no botão continuarEndereço Estudante.") do
+  endereco.btncontinuarendereco
+  sleep(5)
+ end
 

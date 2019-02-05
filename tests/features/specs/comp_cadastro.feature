@@ -48,8 +48,8 @@ Dado que preenchemos os dados do pre-cadastro Estudante
 | Testes7 silva    | Testes7.bompracredito@gmail.com | 
 Entao clico em continuar Estudante
 E preenchos todos os dados do cadastro Estudante:
-|     CPF     | Nascimento| RendaMensal| 
-| 72767107855 | 23021988  | 50000      |
+| CPFEstudante| NascimentoEstudante| RendaMensalEstundante| 
+| 72767107855 | 23021988           | 50000                |
 Entao clico em continuarcadastro.
 E preencho os dados do endereço Estudante:
 |CEP     |Numero|Celular    |
