@@ -7,12 +7,30 @@ class CompCadastro <SitePrism::Page
       element :rendaMensal, '#borrower.monthlyGrossIncome'
       element :masculino, :xpath, '//label[contains(.,"Masculino")]'
       element :estadoCivil, :xpath, '//label[contains(.,"Casado")]'
-      element :combo_ocupaçao, :xpath, '//select[@formcontrolname="jobType"]'
+      
+      element :combo_assalariado, :xpath, '//select[@formcontrolname="jobType"]'
       element :seleciona_assalariado, :xpath, '//*[@id="borrower.jobType"]/option[2]'
-      element :combo_profissão, :xpath, '//*[@id="borrower.profession"]'
-      element :seleciona_profissão, :xpath, '//*[@id="borrower.profession"]/option[89]'
+      
+      element :combo_empresario, :xpath, '//select[@formcontrolname="jobType"]'
+      element :seleciona_empresario, :xpath, '//*[@id="borrower.jobType"]/option[7]'
+
+      element :combo_estudante, :xpath, '//select[@formcontrolname="jobType"]'
+      element :seleciona_estudante, :xpath, '//*[@id="borrower.jobType"]/option[8]'
+      
+
+      element :combo_profissão_desenhista, :xpath, '//*[@id="borrower.profession"]'
+      element :seleciona_profissão_desenhista, :xpath, '//*[@id="borrower.profession"]/option[89]'
+
+      element :combo_profissao_Piscicultor, :xpath, '//*[@id="borrower.profession"]'
+      element :seleciona_profissao_Pisciculto, :xpath, '//*[@id="borrower.profession"]/option[2]'
+      
+      element :combo_profissao_Arqueologo, :xpath, '//*[@id="borrower.profession"]'
+      element :selecionar_profissao_Arqueolofo, :xpath, '//*[@id="borrower.profession"]/option[25]'
+      
+
       element :combo_escolaridade, :xpath, '//*[@id="borrower.educationLevel"]'
       element :seleciona_escolariedade, :xpath, '//*[@id="borrower.educationLevel"]/option[6]'
+      
       element :contaBanco, :xpath, '//*[@id="borrower.bankingData.bankNumber"]'
       element :selecionabanco, :xpath, '//*[@id="borrower.bankingData.bankNumber"]/option[2]'
       element :cheques, :xpath, '//*[@id="borrower.bankingData.hasCheckbook"]'
@@ -27,12 +45,20 @@ class CompCadastro <SitePrism::Page
 
     # Metodos
 
-     def relizarCadastro(cadastro)
-         find(:id, 'borrower.cpf').set cadastro['CPF']
-         find(:id, 'borrower.dateOfBirth').set cadastro['Nascimento']             
-         find(:id, 'borrower.monthlyGrossIncome').set cadastro['RendaMensal']
+     def relizarCadastrodesenhista(cadastro)
+         find(:id, 'borrower.cpf').set cadastro['CPFDesenhista']
+         find(:id, 'borrower.dateOfBirth').set cadastro['NascimentoDesenhista']             
+         find(:id, 'borrower.monthlyGrossIncome').set cadastro['RendaMensalDesenhista']
          sleep(3)
      end
+
+     def relizarCadastroempresario(cadastro)
+        find(:id, 'borrower.cpf').set cadastro['CPFEmpresario']
+        find(:id, 'borrower.dateOfBirth').set cadastro['NascimentoEmpresario']             
+        find(:id, 'borrower.monthlyGrossIncome').set cadastro['RendaMensalEmpresario']
+        sleep(3)
+    end
+
 
      def cliquetelacadastro
          cadastro.click
@@ -81,56 +107,57 @@ class CompCadastro <SitePrism::Page
 
 
       
-     # Métodos Ocupações
+     # Métodos Assalariado
 
 
-     def selecionaocupaçao
-         combo_ocupaçao.click
+     def selecionaAssalariado
+         combo_assalariado.click
      end
 
-     def ocupaçaoselecionada
+     def assalariadoelecionada
          seleciona_assalariado.click
      end
 
-     def ocupaçãoAssalariado(ocupaçao)
-         combo_ocupaçao.find('option', text: ocupaçao). select_option
-         sleep(5)
-     end
-    
-     def OcupaçãoEmpresario
-         combo_ocupaçao.find ('option [ value = "5"]'). select_option
-         sleep(5)
+
+     # Médotos Desenhista
+
+     def selecionaprofissãoDesenhista
+         combo_profissão_desenhista.click
      end
 
-     def OcupaçãoEstudante
-         combo_ocupaçao.find ('option [ value = "6"]'). select_option
-         sleep(5)
+     def profissãoselecionadaDesenhista
+         seleciona_profissão_desenhista.click
      end
 
-     # Médotos Profições
+     # Médotos Empresario
 
-     def selecionaprofissão
-         combo_profissão.click
+     def selecionaOcupacaoEmpresario
+         combo_empresario.click
      end
 
-     def profissãoselecionada
-         seleciona_profissão.click
-     end
-
-     def profissãoDesenhista
-         combo_profissão.find ('option [ label = "Desenhista" ]').select_option
+     def ocupacaoselecionadaEmpresario
+         seleciona_empresario.click
      end
 
 
-     def profissãoPiscicultor
-        combo_profissão.find ('option [ label = "Piscicultor" ]').select_option
-     end
+     # Métodos Piscicultor
+    def selecionaProfissaoPiscicultor
+        combo_profissao_Piscicultor.click
+    end
+
+    def ocupaçãoselecionadaPiscicultor
+        seleciona_profissao_Pisciculto.click  
+    end
 
 
-     def profissãoEngenheiro
-        combo_profissão.find ('option [ label = "Engenheiro" ]').select_option
-     end
-     
+    # Métodos Estudante
+
+
+    # Métodos Arqueolo
+
+
+
+     # Métodos 
      
      def btnContinuar
          continuarcadastro.click

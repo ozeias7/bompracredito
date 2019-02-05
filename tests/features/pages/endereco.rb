@@ -11,7 +11,6 @@ class Endereco <SitePrism::Page
     element :continuarendereço, :xpath, '//*[@id="button-borrower-info"]'
 
 
-
     #Metodos
 
     def informarendereco(endereco)
@@ -22,8 +21,8 @@ class Endereco <SitePrism::Page
     
     def btncontinuarendereco
         continuarendereço.click
+        sleep(25)
     end
-
 
     
 end

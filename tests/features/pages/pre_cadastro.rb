@@ -23,9 +23,20 @@ class PreCadastro <SitePrism::Page
       quantidade.click      
   end
 
-  def  precadastrousuario(precadastro)
+  def  assalariadodesenhista(precadastro)
        nome.set precadastro['Seu nome completo']
        email.set precadastro['Seu e-mail']
+  end
+
+  def empresarioPisciculto(precadastro)
+      nome.set precadastro['Seu nome completo']
+      email.set precadastro['Seu e-mail'] 
+  end
+
+
+  def empresarioEstudante(precadastro)
+      nome.set precadastro['Seu nome completo']
+      email.set precadastro['Seu e-mail'] 
   end
 
   def  cliqueTela
