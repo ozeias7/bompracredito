@@ -170,7 +170,7 @@ end
   cadastro.informarCheques
   cadastro.infomarRestriçãoNome
   cadastro.infomrarImovelProprio
-  cadastro.informarAutomovelProprio
+  cadastro.informarAutomovelPropri
 
   sleep(3)
    
