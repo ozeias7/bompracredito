@@ -20,7 +20,7 @@ class Endereco <SitePrism::Page
     end
     
     def btncontinuarendereco
-        continuarendereço.clic
+        continuarendereço.click
         sleep(25)
     end
 
